@@ -22,7 +22,18 @@ public class BankAccountTest {
 
     @org.junit.Test
     public void withDraw() {
-        fail("This test has yet to be implemented");
+        double balance=account.withDraw(600.00,true);
+        assertEquals(400,balance,0);
+    }
+    @org.junit.Test
+    public void withDraw_branch() {
+        double balance=account.withDraw(600.00,true);
+        assertEquals(400,balance,0);
+    }
+    @org.junit.Test(expected = IllegalArgumentException.class) //Si recibe IllegalArgumentException no lo marca como exception
+    public void withDraw_nobranch() {
+        double balance=account.withDraw(600.00,false);
+        //assertEquals(400,balance,0);
     }
 
     @org.junit.Test
@@ -51,9 +62,9 @@ public class BankAccountTest {
         System.out.println("Count: "+count++);
     }
 
-
 //    @org.junit.Test
 //    public void dummyTest(){
 //        assertEquals(21,21);
 //    }
 }
+
