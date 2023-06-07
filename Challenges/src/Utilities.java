@@ -5,6 +5,8 @@ public class Utilities {
     int n;
     String source;
 
+    public Utilities(){
+    }
     public Utilities(char[] sourceArray, int n, String source) {
         this.sourceArray = sourceArray;
         this.n = n;
@@ -35,6 +37,7 @@ public class Utilities {
         }
         return result;
     }
+
     // Removes pairs of same character that are next
     // to each other, by removing on e occurred of the character
     // "ABBCDEEF" -> "ABCDEF"
@@ -43,7 +46,7 @@ public class Utilities {
 
     public String removePairs(String source){
         //if length <2 return the array, no challenges
-        if (source.length()<2){
+        if (source==null || source.length()<2){
             return source;
         }
         StringBuilder sb=new StringBuilder();
@@ -64,18 +67,12 @@ public class Utilities {
     }
     public String nullIfOddLenght(String source){
         if (source.length()%2==0){
+            System.out.println("Pase°°");
             return source;
         }
         return null;
     }
 }
-
-
-
-
-
-
-
 
 
 
